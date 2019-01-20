@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cron": "^1.6.0",
     "dotenv": "^6.2.0",
     "jsdom": "^13.1.0",
     "jsonfile": "^5.0.0",

@@ -1,7 +1,7 @@
 exports.wantedList = [
     {
         name: 'ChepetskMebel',
-        url: 'https://www.chepetsk-mebel1.ru'
+        url: 'https://www.chepetsk-mebel.ru'
     },
     {
         name: 'Kurakin-Foto',

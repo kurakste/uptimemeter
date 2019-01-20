@@ -1,6 +1,7 @@
 'use strict';
 
 const request = require('request');
+const CronJob = require('cron').CronJob;
 require('dotenv').config();
 const  { wantedList }  = require('./data/wantedList.js')
 
@@ -68,4 +69,6 @@ const mainLoop = (dataArray, prc) => {
     });
 }
 
-mainLoop(wantedList, processor);
+new CronJob('* */10 * * * *', function(){
+    mainLoop(wantedList, processor);
+}, null, true, 'Europe/Moscow');
