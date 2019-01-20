@@ -30,6 +30,7 @@ const errorReporter = (data) => {
         text: `Error detected with server ${data.name}. Error: ${data.error}, server respose code ${data.responsecode}.`
     }
 
+
     transporter.sendMail(mailOptions, function(error, info){
         if (error) {
           console.log(error);
@@ -67,8 +68,11 @@ const mainLoop = (dataArray, prc) => {
     dataArray.forEach(element => {
         prc(element);
     });
+    console.log('work done at ', new Date);
 }
 
-new CronJob('* */10 * * * *', function(){
+const job = new CronJob('0 */10 * * * *', function(){
     mainLoop(wantedList, processor);
-}, null, true, 'Europe/Moscow');
+});
+
+job.start();
